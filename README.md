@@ -1,7 +1,7 @@
 ## Sphinx backend
 It is a project in borders Energy Hack in NSTU.
 ## Installation
-Download and install LTS Version nodejs.org and wampserver.com for you OS
+Download and install LTS Version nodejs.org and [wampserver.com](http://www.wampserver.com/en/#download-wrapper) for you OS
 ## Deployment
   - Start WAMP server
   - Go to http://localhost/phpmyadmin/. Enter login "root" and empty password. 
