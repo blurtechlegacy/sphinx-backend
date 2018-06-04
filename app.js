@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var cors=require('cors');
 var routes = require('./routes/index');
 var Flats=require('./routes/Flats');
-var Adresses=require('./routes/Adresses');
+var Addresses=require('./routes/Addresses');
 var History=require('./routes/History');
 var app = express();
 // view engine setup
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/Flats',Flats);
-app.use('/Adresses',Adresses);
+app.use('/Addresses',Addresses);
 app.use('/History',History);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

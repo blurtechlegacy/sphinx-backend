@@ -11,11 +11,11 @@ getFlatById:function(id,callback){
 
     return db.query("select * from flats where Id=?",[id],callback);
 },
+addFlat:function(flats,callback){
+ return db.query("INSERT INTO flats VALUES(?,?,?,?,?,?,NOW())",[flats.home_id,flats.flat,flats.security,flats.fire_alarm,flats.leak,flats.magnet_field,flats.timestamp],callback);
+ },
 updateFlats:function(id,flats,callback){
-    // this is full shit, kill me please!
-    // db.query("update adresses set timestamp=now() where Id=?",[db.query("select home_id from flats where id=?",[id])]);
-    // db.query("INSERT INTO history (flat_id, security, fire_alarm, leak, magnet_field, timestamp) VALUES (?,?,?,?,?,now());",[flats.flat_id,flats.security,flats.fire_alarm,flats.leak,flats.magnet_field]);
-    return  db.query("update flats set security=?, fire_alarm=?, leak=?, magnet_field=?, timestamp=now() where Id=?",[flats.security,flats.fire_alarm,flats.leak,flats.magnet_field,id],callback);
+    return  db.query("UPDATE addresses SET timestamp=NOW() WHERE Id=(SELECT home_id FROM flats WHERE id=?); INSERT INTO history (flat_id, security, fire_alarm, leak, magnet_field, timestamp) VALUES (?,?,?,?,?,now()); UPDATE flats SET security=?, fire_alarm=?, leak=?, magnet_field=?, timestamp=NOW() WHERE id=?",[parseInt(id),parseInt(id),flats.security,flats.fire_alarm,flats.leak,flats.magnet_field,flats.security,flats.fire_alarm,flats.leak,flats.magnet_field,parseInt(id)],callback);
 }
 };
 module.exports=Flats;

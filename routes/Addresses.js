@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var Adresses=require('../models/Adresses');
+var Addresses=require('../models/Addresses');
 
 router.get('/:id?',function(req,res,next){
 
 if(req.params.id){
 
-    Adresses.getFlatById(req.params.id,function(err,rows){
+    Addresses.getFlatById(req.params.id,function(err,rows){
 
         if(err)
         {
@@ -19,7 +19,7 @@ if(req.params.id){
 }
 else{
 
- Adresses.getAllAdresses(function(err,rows){
+ Addresses.getAllAddresses(function(err,rows){
 
         if(err)
         {
@@ -36,7 +36,7 @@ else{
 
 router.put('/:id',function(req,res,next){
 
-    Adresses.updateAdresses(req.params.id,req.body,function(err,rows){
+    Addresses.updateAddresses(req.params.id,req.body,function(err,rows){
 
         if(err)
         {

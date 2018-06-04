@@ -33,6 +33,19 @@ else{
     });
 }
 });
+router.post('/',function(req,res,next){
+
+    Flats.addFlat(req.body,function(err,count){
+
+        if(err)
+        {
+            res.json(err);
+        }
+        else{
+                res.json(req.body);
+        }
+    });
+});
 router.put('/:id',function(req,res,next){
 
     Flats.updateFlats(req.params.id,req.body,function(err,rows){

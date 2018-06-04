@@ -19,13 +19,13 @@
   /*!40101 SET NAMES utf8mb4 */;
 
   --
-  -- Структура таблицы `adresses`
+  -- Структура таблицы `addresses`
   --
   -- Создание: Май 12 2018 г., 22:02
   --
 
-  DROP TABLE IF EXISTS `adresses`;
-  CREATE TABLE `adresses` (
+  DROP TABLE IF EXISTS `addresses`;
+  CREATE TABLE `addresses` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `city` varchar(20) NOT NULL,
     `street` varchar(50) NOT NULL,
@@ -37,10 +37,10 @@
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
   --
-  -- Дамп данных таблицы `adresses`
+  -- Дамп данных таблицы `addresses`
   --
 
-  INSERT INTO `adresses` (`id`, `city`, `street`, `home`, `number`, `timestamp`) VALUES
+  INSERT INTO `addresses` (`id`, `city`, `street`, `home`, `number`, `timestamp`) VALUES
   (1, 'Новосибирск', 'Ленина', 1, 89231321797, '2018-05-12 20:02:27'),
   (2, 'Новосибирск', 'Богаткова', 201, 89139745778, '2018-05-12 20:22:15');
 
