@@ -18,7 +18,7 @@
     "morgan": "1.9.1",
     "mysql": "2.16.0",
     "serve-favicon": "2.5.0",
-    "snyk": "1.134.2"
+    "snyk": "1.147.4"
   },
   "snyk": true
 }
